@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# session logs and sensitive data (keep in topos/.local/)
+/sessionlogs/
+*.log
+*.sqlite
+
+# local development
+.local/
