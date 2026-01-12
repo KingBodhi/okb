@@ -1,29 +1,48 @@
 @import "tailwindcss";
 
 :root {
+  /* Core */
   --background: #ffffff;
-  --foreground: #171717;
-  --accent: #3949AB;
-  --accent-hover: #2c3a8c;
-  --muted: #f5f5f5;
-  --muted-foreground: #6b7280;
-  --border: #e5e5e5;
+  --foreground: #0a0a0a;
+
+  /* Gold Palette */
+  --gold: #B4914C;
+  --gold-light: #D4B978;
+  --gold-dark: #8B6F3A;
+  --gold-muted: #C9B896;
+
+  /* Neutrals */
+  --muted: #FAFAF8;
+  --muted-foreground: #71717A;
+  --border: #E4E4E7;
+
+  /* Dark Section */
+  --dark-bg: #0a0a0a;
+  --dark-muted: #1a1a1a;
+  --dark-border: #2a2a2a;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
-  --color-accent-hover: var(--accent-hover);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-gold-muted: var(--gold-muted);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
+  --color-dark-bg: var(--dark-bg);
+  --color-dark-muted: var(--dark-muted);
+  --color-dark-border: var(--dark-border);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Cinzel font class */
@@ -36,45 +55,302 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Form styling */
-input, textarea, select {
-  border: 1px solid var(--border);
-  padding: 0.75rem 1rem;
-  width: 100%;
-  font-size: 1rem;
-  transition: border-color 0.2s;
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+.heading-xl {
+  font-size: 3rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
-input:focus, textarea:focus, select:focus {
-  outline: none;
-  border-color: var(--accent);
+.heading-lg {
+  font-size: 1.5rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 400;
 }
 
-/* Button styling */
+.heading-md {
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  font-weight: 400;
+}
+
+.text-lead {
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+/* ============================================
+   DECORATIVE ELEMENTS
+   ============================================ */
+
+.heading-divider {
+  width: 60px;
+  height: 2px;
+  background-color: var(--gold);
+  margin: 1rem auto 2rem;
+}
+
+.heading-divider-left {
+  width: 60px;
+  height: 2px;
+  background-color: var(--gold);
+  margin: 1rem 0 2rem;
+}
+
+.gold-border-left {
+  border-left: 4px solid var(--gold);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
 .btn-primary {
-  background-color: var(--accent);
+  background-color: var(--gold);
   color: white;
-  padding: 0.75rem 2rem;
-  font-weight: 500;
-  transition: background-color 0.2s;
+  padding: 0.875rem 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  transition: all 0.3s;
   cursor: pointer;
+  border: none;
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-hover);
+  background-color: var(--gold-dark);
+  transform: translateY(-2px);
 }
 
 .btn-outline {
   background-color: transparent;
-  color: var(--foreground);
-  border: 1px solid var(--foreground);
-  padding: 0.75rem 2rem;
-  font-weight: 500;
-  transition: all 0.2s;
+  color: var(--gold);
+  border: 2px solid var(--gold);
+  padding: 0.875rem 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  transition: all 0.3s;
   cursor: pointer;
 }
 
 .btn-outline:hover {
-  background-color: var(--foreground);
-  color: var(--background);
+  background-color: var(--gold);
+  color: white;
+}
+
+/* Dark section button variants */
+.dark-section .btn-outline {
+  color: var(--gold-light);
+  border-color: var(--gold-light);
+}
+
+.dark-section .btn-outline:hover {
+  background-color: var(--gold-light);
+  color: var(--dark-bg);
+}
+
+.btn-white {
+  background-color: white;
+  color: var(--dark-bg);
+  padding: 0.875rem 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-white:hover {
+  background-color: var(--gold-light);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   FORM STYLING
+   ============================================ */
+
+input, textarea, select {
+  border: 1px solid var(--border);
+  padding: 0.875rem 1rem;
+  width: 100%;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  background-color: white;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+/* Dark section form variants */
+.dark-section input,
+.dark-section textarea,
+.dark-section select {
+  background-color: var(--dark-muted);
+  border-color: var(--dark-border);
+  color: white;
+}
+
+.dark-section input:focus,
+.dark-section textarea:focus,
+.dark-section select:focus {
+  border-color: var(--gold-light);
+}
+
+.dark-section input::placeholder,
+.dark-section textarea::placeholder {
+  color: var(--muted-foreground);
+}
+
+/* ============================================
+   SECTION THEMES
+   ============================================ */
+
+.section-light {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.section-muted {
+  background-color: var(--muted);
+  color: var(--foreground);
+}
+
+.section-dark {
+  background-color: var(--dark-bg);
+  color: white;
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+
+.venture-card {
+  background-color: white;
+  border-left: 4px solid var(--gold);
+  padding: 2rem;
+  transition: all 0.3s;
+}
+
+.venture-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.venture-card-dark {
+  background-color: var(--dark-muted);
+  border: 1px solid var(--dark-border);
+  padding: 2rem;
+  transition: all 0.3s;
+}
+
+.venture-card-dark:hover {
+  border-color: var(--gold);
+}
+
+/* ============================================
+   STATUS BADGES
+   ============================================ */
+
+.badge-live {
+  background-color: var(--gold);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.badge-building {
+  background-color: transparent;
+  color: var(--gold-light);
+  border: 1px solid var(--gold-light);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.badge-nonprofit {
+  background-color: var(--gold-light);
+  color: var(--dark-bg);
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+  animation-delay: 0.3s;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.text-gold {
+  color: var(--gold);
+}
+
+.text-gold-light {
+  color: var(--gold-light);
+}
+
+.bg-gold {
+  background-color: var(--gold);
+}
+
+.border-gold {
+  border-color: var(--gold);
+}
+
+.hover-lift {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }

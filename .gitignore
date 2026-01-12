@@ -44,6 +44,8 @@ next-env.d.ts
 /sessionlogs/
 *.log
 *.sqlite
+*.db
+/data/
 
 # local development
 .local/
