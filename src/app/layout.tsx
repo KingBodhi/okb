@@ -14,9 +14,68 @@ const cinzel = Cinzel({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://oklahomabillionaire.com";
+
 export const metadata: Metadata = {
-  title: "The Office of the Oklahoma Billionaire",
-  description: "Facilitating Global Economic Abundance through technology and innovation to improve the human and planetary condition.",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "The Office of the Oklahoma Billionaire | Family Office",
+    template: "%s | Oklahoma Billionaire",
+  },
+  description: "A single-family office facilitating Global Economic Abundance through technology, innovation, and the arts. Managing a diverse portfolio of operating companies, venture investments, and philanthropic initiatives.",
+  keywords: [
+    "family office",
+    "Oklahoma",
+    "venture capital",
+    "technology",
+    "innovation",
+    "philanthropy",
+    "Jessy Artman",
+    "PowerClub Global",
+    "Alpha Protocol",
+    "Omega Wireless",
+  ],
+  authors: [{ name: "Jessy Artman" }],
+  creator: "The Office of the Oklahoma Billionaire",
+  publisher: "The Office of the Oklahoma Billionaire",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "The Office of the Oklahoma Billionaire",
+    title: "The Office of the Oklahoma Billionaire | Family Office",
+    description: "A single-family office facilitating Global Economic Abundance through technology, innovation, and the arts.",
+    images: [
+      {
+        url: "/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "The Office of the Oklahoma Billionaire",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Office of the Oklahoma Billionaire",
+    description: "A single-family office facilitating Global Economic Abundance through technology, innovation, and the arts.",
+    creator: "@oklahomabillion",
+    images: ["/images/og-image.jpg"],
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
+  category: "business",
 };
 
 export default function RootLayout({

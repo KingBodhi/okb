@@ -2,11 +2,13 @@ import { getPostBySlug } from '@/lib/blog';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { use } from 'react';
 
 export const dynamic = 'force-dynamic';
 
-export default function NewsArticle({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug);
+export default function NewsArticle({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = use(params);
+  const post = getPostBySlug(slug);
 
   if (!post || post.status !== 'published') {
     notFound();

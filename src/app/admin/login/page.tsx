@@ -26,7 +26,7 @@ export default function AdminLoginPage() {
         throw new Error(data.error || 'Unable to login');
       }
 
-      router.push('/admin/panel');
+      router.push('/admin');
     } catch (err) {
       setError((err as Error).message);
     } finally {

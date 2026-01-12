@@ -101,7 +101,7 @@ export default function Press() {
                   facilitating Global Economic Abundance through technology, innovation, and the arts.
                 </p>
                 <p>
-                  He is the founder of PowerClub Global, Fine Art Society, Alpha Protocol,
+                  He is the founder of PowerClub Global, Alpha Protocol,
                   and Omega Wireless, among other ventures currently in development.
                   Based in Oklahoma, Artman champions the bold to achieve the extraordinary.
                 </p>
@@ -156,13 +156,6 @@ export default function Press() {
               className="text-sm text-gray-400 hover:text-[var(--gold-light)] transition-colors px-4 py-2 border border-[var(--dark-border)] hover:border-[var(--gold)]"
             >
               PowerClub Global
-            </Link>
-            <Link
-              href="https://fineartsociety.xyz"
-              target="_blank"
-              className="text-sm text-gray-400 hover:text-[var(--gold-light)] transition-colors px-4 py-2 border border-[var(--dark-border)] hover:border-[var(--gold)]"
-            >
-              Fine Art Society
             </Link>
             <Link
               href="https://alphaprotocol.network"

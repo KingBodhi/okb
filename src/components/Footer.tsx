@@ -1,18 +1,27 @@
 import Link from "next/link";
 
+const socialLinks = [
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/jessyartman/", icon: "in" },
+  { name: "X", href: "https://x.com/oklahomabillion", icon: "𝕏" },
+  { name: "Instagram", href: "https://instagram.com/oklahomabillionaire", icon: "ig" },
+  { name: "Facebook", href: "https://facebook.com/oklahomabillionaire", icon: "fb" },
+];
+
+export { socialLinks };
+
 export default function Footer() {
   return (
     <footer className="bg-[var(--dark-bg)] py-16 border-t border-[var(--gold)]/20">
       <div className="max-w-6xl mx-auto px-6">
         {/* Main Footer Content */}
-        <div className="grid md:grid-cols-3 gap-12 mb-12">
+        <div className="grid md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div>
             <h3 className="font-cinzel text-white tracking-[0.15em] uppercase text-lg mb-4">
               Oklahoma Billionaire
             </h3>
             <p className="text-sm text-gray-400 leading-relaxed">
-              Building ventures that facilitate Global Economic Abundance through technology, innovation, and the arts.
+              A single-family office facilitating Global Economic Abundance through technology, innovation, and the arts.
             </p>
           </div>
 
@@ -25,8 +34,8 @@ export default function Footer() {
               <Link href="/vision" className="text-sm text-gray-400 hover:text-[var(--gold-light)] transition-colors">
                 Vision
               </Link>
-              <Link href="/ventures" className="text-sm text-gray-400 hover:text-[var(--gold-light)] transition-colors">
-                Ventures
+              <Link href="/portfolio" className="text-sm text-gray-400 hover:text-[var(--gold-light)] transition-colors">
+                Portfolio
               </Link>
               <Link href="/news" className="text-sm text-gray-400 hover:text-[var(--gold-light)] transition-colors">
                 News
@@ -54,6 +63,27 @@ export default function Footer() {
             <p className="text-sm text-gray-500 mt-4">
               Ponca City, Oklahoma
             </p>
+          </div>
+
+          {/* Social */}
+          <div>
+            <h4 className="text-[var(--gold-light)] tracking-[0.15em] uppercase text-sm font-semibold mb-4">
+              Connect
+            </h4>
+            <div className="flex gap-4">
+              {socialLinks.map((social) => (
+                <Link
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 border border-[var(--gold)]/30 flex items-center justify-center text-gray-400 hover:text-[var(--gold-light)] hover:border-[var(--gold)] transition-colors text-sm"
+                  aria-label={social.name}
+                >
+                  {social.icon}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 

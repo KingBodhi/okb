@@ -6,11 +6,21 @@ export interface Venture {
   name: string;
   tagline: string;
   sector: string;
-  category: "Infrastructure" | "Philanthropy" | "Fine Art" | "Agency" | "Oklahoma" | "Fund";
+  category: "Infrastructure" | "Philanthropy" | "Agency" | "Oklahoma" | "Fund";
   status: VentureStatus;
   type: VentureType;
   description: string;
   features?: string[];
+  url?: string;
+  location?: string;
+}
+
+export interface PCGClient {
+  id: string;
+  name: string;
+  tagline: string;
+  sector: string;
+  description: string;
   url?: string;
   location?: string;
 }
@@ -106,42 +116,23 @@ export const ventures: Venture[] = [
     location: "223 West Grand Ave, Ponca City, OK"
   },
 
-  // === FINE ART ===
-  {
-    id: "fine-art-society",
-    name: "Fine Art Society",
-    tagline: "Timeless Fine Art for the Modern Collector",
-    sector: "Art Gallery",
-    category: "Fine Art",
-    status: "LIVE",
-    type: "venture",
-    description: "Bridging classical art appreciation with contemporary collecting through physical and virtual gallery experiences.",
-    features: [
-      "Physical gallery in Ponca City, OK",
-      "Virtual 3D gallery experience",
-      "Featured artists program",
-      "Events and expositions"
-    ],
-    url: "https://fineartsociety.xyz",
-    location: "223 West Grand Ave, Ponca City, OK"
-  },
-
   // === THE FUND ===
   {
     id: "okb-ventures",
     name: "OKB Ventures",
-    tagline: "Building Tomorrow's Legacy Today",
+    tagline: "Investing in Tomorrow's Legacy",
     sector: "Venture Capital",
     category: "Fund",
     status: "BUILDING",
     type: "fund",
-    description: "The investment vehicle of the Oklahoma Billionaire. OKB Ventures deploys capital into ventures that enhance the quality of life for individuals in Oklahoma and beyond — from technology infrastructure to community development.",
+    description: "The investment arm of the Family Office. OKB Ventures deploys capital into early-stage ventures that enhance the quality of life for individuals in Oklahoma and beyond — from technology infrastructure to community development.",
     features: [
-      "Strategic investment in portfolio companies",
+      "Early-stage venture investments",
       "Oklahoma-focused economic development",
-      "Technology and infrastructure ventures",
+      "Technology and infrastructure focus",
       "Community impact initiatives"
-    ]
+    ],
+    url: "https://okbventures.com"
   },
 
   // === OKLAHOMA ===
@@ -181,12 +172,14 @@ export const ventures: Venture[] = [
   }
 ];
 
+// PCG Portfolio - Clients and projects powered by PowerClub Global
+export const pcgPortfolio: PCGClient[] = [];
+
 // Helper functions
 export const agencyVenture = ventures.find(v => v.type === "agency")!;
 export const fundVenture = ventures.find(v => v.type === "fund")!;
 export const infrastructureVentures = ventures.filter(v => v.category === "Infrastructure");
 export const philanthropyVentures = ventures.filter(v => v.category === "Philanthropy");
-export const fineArtVentures = ventures.filter(v => v.category === "Fine Art");
 export const oklahomaVentures = ventures.filter(v => v.category === "Oklahoma");
 export const liveVentures = ventures.filter(v => v.status === "LIVE");
 export const buildingVentures = ventures.filter(v => v.status === "BUILDING");

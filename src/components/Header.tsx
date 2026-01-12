@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { socialLinks } from "./Footer";
 
 const navItems = [
   { href: "/vision", label: "Vision" },
-  { href: "/ventures", label: "Ventures" },
+  { href: "/portfolio", label: "Portfolio" },
   { href: "/news", label: "News" },
   { href: "/press", label: "Press" },
   { href: "/contact", label: "Contact" },
@@ -57,14 +58,6 @@ export default function Header() {
           ))}
         </div>
 
-        {/* Login - Top Right */}
-        <Link
-          href="/admin/login"
-          className={`hidden md:block absolute top-4 right-6 text-sm tracking-[0.1em] uppercase font-medium ${textColor} hover:text-[var(--gold)] transition-colors`}
-        >
-          Login
-        </Link>
-
         {/* Mobile Menu Button */}
         <div className="md:hidden flex justify-center">
           <button
@@ -91,13 +84,20 @@ export default function Header() {
                 </Link>
               ))}
               <div className="w-12 h-px bg-[var(--gold)]/30 my-2" />
-              <Link
-                href="/admin/login"
-                className="text-sm tracking-[0.1em] uppercase font-medium text-[var(--gold-light)] hover:text-white transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Login
-              </Link>
+              <div className="flex gap-4">
+                {socialLinks.map((social) => (
+                  <Link
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-9 h-9 border border-[var(--gold)]/30 flex items-center justify-center text-gray-400 hover:text-[var(--gold-light)] hover:border-[var(--gold)] transition-colors text-xs"
+                    aria-label={social.name}
+                  >
+                    {social.icon}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
         )}

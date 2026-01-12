@@ -33,7 +33,7 @@ export default function Home() {
             <Link href="/vision" className="btn-primary">
               Explore the Vision
             </Link>
-            <Link href="/ventures" className="btn-outline text-[var(--gold-light)] border-[var(--gold-light)] hover:bg-[var(--gold-light)] hover:text-black">
+            <Link href="/portfolio" className="btn-outline text-[var(--gold-light)] border-[var(--gold-light)] hover:bg-[var(--gold-light)] hover:text-black">
               View Ventures
             </Link>
           </div>
@@ -178,7 +178,7 @@ export default function Home() {
           )}
 
           <div className="text-center mt-12">
-            <Link href="/ventures" className="btn-outline">
+            <Link href="/portfolio" className="btn-outline">
               View All Ventures
             </Link>
           </div>
@@ -197,7 +197,7 @@ export default function Home() {
             <div className="w-16 h-0.5 bg-[var(--gold)] mx-auto" />
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid md:grid-cols-3 gap-12">
             {/* Infrastructure */}
             <div className="text-center">
               <h3 className="font-cinzel text-[var(--gold-light)] text-xl tracking-wider uppercase mb-4">
@@ -241,20 +241,6 @@ export default function Home() {
               </p>
               <div className="text-xs text-gray-500 space-y-1">
                 <p>Emergence Institute</p>
-              </div>
-            </div>
-
-            {/* Fine Art */}
-            <div className="text-center">
-              <h3 className="font-cinzel text-[var(--gold-light)] text-xl tracking-wider uppercase mb-4">
-                Fine Art
-              </h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                Championing artistic expression and cultural preservation — bridging
-                classical art appreciation with contemporary collecting.
-              </p>
-              <div className="text-xs text-gray-500 space-y-1">
-                <p>Fine Art Society</p>
               </div>
             </div>
           </div>

@@ -20,6 +20,12 @@
   --dark-bg: #0a0a0a;
   --dark-muted: #1a1a1a;
   --dark-border: #2a2a2a;
+
+  /* Admin Panel */
+  --admin-bg: #f8fafc;
+  --admin-muted: #f1f5f9;
+  --admin-border: #e2e8f0;
+  --admin-accent: #3b82f6;
 }
 
 @theme inline {
