@@ -1,12 +1,12 @@
 export type VentureStatus = "LIVE" | "BUILDING";
-export type VentureType = "venture" | "nonprofit" | "agency";
+export type VentureType = "venture" | "nonprofit" | "agency" | "fund";
 
 export interface Venture {
   id: string;
   name: string;
   tagline: string;
   sector: string;
-  category: "Infrastructure" | "Philanthropy" | "Fine Art" | "Agency";
+  category: "Infrastructure" | "Philanthropy" | "Fine Art" | "Agency" | "Oklahoma" | "Fund";
   status: VentureStatus;
   type: VentureType;
   description: string;
@@ -124,13 +124,70 @@ export const ventures: Venture[] = [
     ],
     url: "https://fineartsociety.xyz",
     location: "223 West Grand Ave, Ponca City, OK"
+  },
+
+  // === THE FUND ===
+  {
+    id: "okb-ventures",
+    name: "OKB Ventures",
+    tagline: "Building Tomorrow's Legacy Today",
+    sector: "Venture Capital",
+    category: "Fund",
+    status: "BUILDING",
+    type: "fund",
+    description: "The investment vehicle of the Oklahoma Billionaire. OKB Ventures deploys capital into ventures that enhance the quality of life for individuals in Oklahoma and beyond — from technology infrastructure to community development.",
+    features: [
+      "Strategic investment in portfolio companies",
+      "Oklahoma-focused economic development",
+      "Technology and infrastructure ventures",
+      "Community impact initiatives"
+    ]
+  },
+
+  // === OKLAHOMA ===
+  {
+    id: "wahzhazhe-industries",
+    name: "Wahzhazhe Industries",
+    tagline: "Sovereign Manufacturing for a Sovereign Nation",
+    sector: "Manufacturing",
+    category: "Oklahoma",
+    status: "BUILDING",
+    type: "venture",
+    description: "A manufacturing enterprise on the Osage reservation, building facilities to make the Osage Nation a leading exporter in Oklahoma. From computer parts to aerospace components, creating jobs and economic prosperity for the Wahzhazhe people.",
+    features: [
+      "Computer parts manufacturing",
+      "Robotics and drone production",
+      "Aerospace components",
+      "Defense equipment manufacturing"
+    ],
+    location: "Osage Nation, Oklahoma"
+  },
+  {
+    id: "mahnshee-estates",
+    name: "Mahⁿshee Estates",
+    tagline: "Elevating Communities, One Home at a Time",
+    sector: "Real Estate Development",
+    category: "Oklahoma",
+    status: "BUILDING",
+    type: "venture",
+    description: "Redeveloping Oklahoma neighborhoods into thriving communities through strategic acquisition, renovation, and resale of homes. Building wealth and stability for Oklahoma families.",
+    features: [
+      "Neighborhood revitalization",
+      "Home renovation and resale",
+      "Community development",
+      "Affordable housing initiatives"
+    ],
+    location: "Oklahoma"
   }
 ];
 
 // Helper functions
 export const agencyVenture = ventures.find(v => v.type === "agency")!;
+export const fundVenture = ventures.find(v => v.type === "fund")!;
 export const infrastructureVentures = ventures.filter(v => v.category === "Infrastructure");
 export const philanthropyVentures = ventures.filter(v => v.category === "Philanthropy");
 export const fineArtVentures = ventures.filter(v => v.category === "Fine Art");
+export const oklahomaVentures = ventures.filter(v => v.category === "Oklahoma");
 export const liveVentures = ventures.filter(v => v.status === "LIVE");
 export const buildingVentures = ventures.filter(v => v.status === "BUILDING");
+export const portfolioVentures = ventures.filter(v => v.type !== "agency" && v.type !== "fund");

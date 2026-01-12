@@ -27,7 +27,7 @@ export default function Home() {
           </h1>
           <div className="w-16 h-0.5 bg-[var(--gold)] mx-auto mb-8 animate-fade-in animate-delay-200" />
           <p className="text-white/90 text-lg md:text-xl font-light italic mb-10 animate-fade-in animate-delay-200">
-            &ldquo;Championing the Bold to Achieve the Extraordinary&rdquo;
+            &ldquo;Building Tomorrow&apos;s Legacy Today&rdquo;
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animate-delay-300">
             <Link href="/vision" className="btn-primary">
@@ -94,7 +94,7 @@ export default function Home() {
                 <p className="text-[var(--gold-light)] text-sm tracking-wider uppercase">Road Shows</p>
               </div>
               <div className="text-center">
-                <p className="text-[var(--gold-light)] text-sm tracking-wider uppercase">Social Media</p>
+                <p className="text-[var(--gold-light)] text-sm tracking-wider uppercase">Social Media Management</p>
               </div>
               <div className="text-center">
                 <p className="text-[var(--gold-light)] text-sm tracking-wider uppercase">Web Development</p>
@@ -186,18 +186,18 @@ export default function Home() {
       </section>
 
       {/* ============================================
-          THREE PILLARS SECTION - Black/Gold
+          CORE PILLARS SECTION - Black/Gold
           ============================================ */}
       <section className="py-24 px-6 bg-[var(--dark-bg)]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-cinzel text-white text-2xl md:text-3xl tracking-[0.15em] uppercase mb-4">
-              Three Pillars
+              Core Pillars
             </h2>
             <div className="w-16 h-0.5 bg-[var(--gold)] mx-auto" />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
             {/* Infrastructure */}
             <div className="text-center">
               <h3 className="font-cinzel text-[var(--gold-light)] text-xl tracking-wider uppercase mb-4">
@@ -212,6 +212,21 @@ export default function Home() {
                 <p>Omega Wireless</p>
                 <p>Spectrum Galactic</p>
                 <p>Pythia AI</p>
+              </div>
+            </div>
+
+            {/* Oklahoma */}
+            <div className="text-center">
+              <h3 className="font-cinzel text-[var(--gold-light)] text-xl tracking-wider uppercase mb-4">
+                Oklahoma
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                Building prosperity and opportunity in the heartland — from sovereign
+                manufacturing to community development.
+              </p>
+              <div className="text-xs text-gray-500 space-y-1">
+                <p>Wahzhazhe Industries</p>
+                <p>Mahⁿshee Estates</p>
               </div>
             </div>
 

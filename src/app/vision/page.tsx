@@ -3,6 +3,7 @@ import { ventures } from "@/data/ventures";
 
 export default function Vision() {
   const infrastructureVentures = ventures.filter(v => v.category === "Infrastructure");
+  const oklahomaVentures = ventures.filter(v => v.category === "Oklahoma");
   const philanthropyVentures = ventures.filter(v => v.category === "Philanthropy");
   const fineArtVentures = ventures.filter(v => v.category === "Fine Art");
 
@@ -20,7 +21,7 @@ export default function Vision() {
 
         <div className="relative z-20 text-center text-white px-6 max-w-4xl">
           <blockquote className="text-2xl md:text-3xl lg:text-4xl font-cinzel italic leading-relaxed mb-6">
-            &ldquo;Championing the Bold to Achieve the Extraordinary&rdquo;
+            &ldquo;Fortune Favors the Visionary&rdquo;
           </blockquote>
           <div className="w-16 h-0.5 bg-[var(--gold)] mx-auto mb-6" />
           <p className="text-lg tracking-[0.2em] uppercase text-[var(--gold-light)]">
@@ -60,18 +61,18 @@ export default function Vision() {
       </section>
 
       {/* ============================================
-          THREE PILLARS - Black/Gold
+          CORE PILLARS - Black/Gold
           ============================================ */}
       <section className="py-24 px-6 bg-[var(--dark-bg)]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-cinzel text-white text-2xl md:text-3xl tracking-[0.15em] uppercase mb-4">
-              Three Pillars
+              Core Pillars
             </h2>
             <div className="w-16 h-0.5 bg-[var(--gold)] mx-auto" />
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
             {/* Infrastructure */}
             <div className="text-center">
               <h3 className="font-cinzel text-[var(--gold-light)] text-xl tracking-wider uppercase mb-6">
@@ -94,6 +95,37 @@ export default function Vision() {
                         {v.status === "BUILDING" && (
                           <span className="text-xs text-gray-500 ml-2">(Building)</span>
                         )}
+                      </Link>
+                    ) : (
+                      <span className="text-gray-500">
+                        {v.name}
+                        <span className="text-xs ml-2">(Building)</span>
+                      </span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Oklahoma */}
+            <div className="text-center">
+              <h3 className="font-cinzel text-[var(--gold-light)] text-xl tracking-wider uppercase mb-6">
+                Oklahoma
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-8">
+                Building prosperity and opportunity in the heartland — from sovereign
+                manufacturing to community development.
+              </p>
+              <div className="space-y-3">
+                {oklahomaVentures.map((v) => (
+                  <div key={v.id} className="text-sm">
+                    {v.url ? (
+                      <Link
+                        href={v.url}
+                        target="_blank"
+                        className="text-gray-300 hover:text-[var(--gold-light)] transition-colors"
+                      >
+                        {v.name}
                       </Link>
                     ) : (
                       <span className="text-gray-500">
