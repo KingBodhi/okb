@@ -59,3 +59,15 @@ export function getSubmissionStats() {
   const press = (db.prepare('SELECT COUNT(*) as count FROM okb_press_requests').get() as { count: number } | undefined)?.count ?? 0;
   return { contact, scheduling, press };
 }
+
+export function deleteSubmission(type: 'contact' | 'scheduling' | 'press', id: number) {
+  const db = getDb();
+  const tables = {
+    contact: 'okb_contact_submissions',
+    scheduling: 'okb_scheduling_requests',
+    press: 'okb_press_requests',
+  };
+  const table = tables[type];
+  const stmt = db.prepare(`DELETE FROM ${table} WHERE id = ?`);
+  return stmt.run(id).changes;
+}

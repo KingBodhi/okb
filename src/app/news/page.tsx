@@ -1,5 +1,15 @@
 import Link from "next/link";
+import { Metadata } from "next";
 import { getPublishedPosts } from "@/lib/blog";
+
+export const metadata: Metadata = {
+  title: "News",
+  description: "Latest news, updates, and insights from the Office of the Oklahoma Billionaire. Stay informed about our ventures, initiatives, and thought leadership.",
+  openGraph: {
+    title: "News | Oklahoma Billionaire",
+    description: "Latest news and updates from the Office of the Oklahoma Billionaire.",
+  },
+};
 
 export const dynamic = "force-dynamic";
 

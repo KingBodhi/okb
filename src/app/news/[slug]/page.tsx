@@ -1,21 +1,102 @@
-import { getPostBySlug } from '@/lib/blog';
+import { getPostBySlug, getPublishedPosts } from '@/lib/blog';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { use } from 'react';
+import { Metadata } from 'next';
 
 export const dynamic = 'force-dynamic';
 
-export default function NewsArticle({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = use(params);
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+
+  if (!post || post.status !== 'published') {
+    return {
+      title: 'Article Not Found',
+    };
+  }
+
+  const siteUrl = 'https://oklahomabillionaire.com';
+
+  return {
+    title: post.title,
+    description: post.subtitle || `${post.content?.substring(0, 155)}...`,
+    openGraph: {
+      title: post.title,
+      description: post.subtitle || `${post.content?.substring(0, 155)}...`,
+      type: 'article',
+      publishedTime: post.date,
+      modifiedTime: post.updated_at || post.date,
+      authors: ['Jessy Artman'],
+      images: post.image ? [
+        {
+          url: `${siteUrl}${post.image}`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ] : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.subtitle || `${post.content?.substring(0, 155)}...`,
+      images: post.image ? [`${siteUrl}${post.image}`] : undefined,
+    },
+  };
+}
+
+export async function generateStaticParams() {
+  const posts = getPublishedPosts();
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+export default async function NewsArticle({ params }: Props) {
+  const { slug } = await params;
   const post = getPostBySlug(slug);
 
   if (!post || post.status !== 'published') {
     notFound();
   }
 
+  const siteUrl = 'https://oklahomabillionaire.com';
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.subtitle || post.content?.substring(0, 155),
+    image: post.image ? `${siteUrl}${post.image}` : undefined,
+    datePublished: post.date,
+    dateModified: post.updated_at || post.date,
+    author: {
+      "@type": "Person",
+      name: "Jessy Artman",
+      url: "https://www.linkedin.com/in/jessyartman/",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "The Office of the Oklahoma Billionaire",
+      url: siteUrl,
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${siteUrl}/news/${post.slug}`,
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       {/* ============================================
           HERO SECTION - Black/Gold
           ============================================ */}
@@ -69,7 +150,7 @@ export default function NewsArticle({ params }: { params: Promise<{ slug: string
               href="/news"
               className="text-sm text-[var(--gold)] hover:text-[var(--gold-dark)] transition-colors inline-flex items-center gap-2"
             >
-              <span>←</span>
+              <span>&larr;</span>
               Back to News
             </Link>
           </div>

@@ -78,6 +78,31 @@ export const metadata: Metadata = {
   category: "business",
 };
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "The Office of the Oklahoma Billionaire",
+  alternateName: "Oklahoma Billionaire",
+  url: siteUrl,
+  logo: `${siteUrl}/images/og-image.jpg`,
+  description: "A single-family office facilitating Global Economic Abundance through technology, innovation, and the arts.",
+  founder: {
+    "@type": "Person",
+    name: "Jessy Artman",
+    jobTitle: "Principal",
+  },
+  sameAs: [
+    "https://www.linkedin.com/in/jessyartman/",
+    "https://x.com/oklahomabillion",
+    "https://instagram.com/oklahomabillionaire",
+  ],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "general inquiries",
+    email: "theoffice@oklahomabillionaire.com",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -85,6 +110,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+      </head>
       <body className={`${inter.variable} ${cinzel.variable} antialiased bg-white text-black`}>
         <Header />
         <main>{children}</main>

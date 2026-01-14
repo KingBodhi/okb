@@ -23,6 +23,7 @@ function SubmissionsContent() {
   const [submissions, setSubmissions] = useState<Submission[]>([]);
   const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState<Submission | null>(null);
+  const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -51,6 +52,30 @@ function SubmissionsContent() {
     { id: "scheduling", label: "Scheduling", icon: "📅" },
     { id: "press", label: "Press", icon: "📰" },
   ];
+
+  const handleDelete = async (id: number) => {
+    if (!confirm("Are you sure you want to delete this submission?")) return;
+
+    setDeleting(true);
+    try {
+      const response = await fetch(`/api/admin/submissions?type=${type}&id=${id}`, {
+        method: "DELETE",
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to delete submission");
+      }
+
+      setSubmissions((prev) => prev.filter((s) => s.id !== id));
+      if (selected?.id === id) {
+        setSelected(null);
+      }
+    } catch (err) {
+      alert((err as Error).message);
+    } finally {
+      setDeleting(false);
+    }
+  };
 
   return (
     <div className="space-y-8">
@@ -154,7 +179,14 @@ function SubmissionsContent() {
                 </div>
               </div>
 
-              <div className="flex gap-4 pt-4 border-t border-[var(--border)]">
+              <div className="flex justify-between items-center pt-4 border-t border-[var(--border)]">
+                <button
+                  onClick={() => handleDelete(selected.id)}
+                  disabled={deleting}
+                  className="px-4 py-2 border border-red-300 text-red-600 rounded hover:bg-red-50 transition-colors disabled:opacity-50"
+                >
+                  {deleting ? "Deleting..." : "Delete"}
+                </button>
                 {selected.email && (
                   <a
                     href={`mailto:${selected.email}`}

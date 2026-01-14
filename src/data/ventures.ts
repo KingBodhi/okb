@@ -123,7 +123,7 @@ export const ventures: Venture[] = [
     tagline: "Investing in Tomorrow's Legacy",
     sector: "Venture Capital",
     category: "Fund",
-    status: "BUILDING",
+    status: "LIVE",
     type: "fund",
     description: "The investment arm of the Family Office. OKB Ventures deploys capital into early-stage ventures that enhance the quality of life for individuals in Oklahoma and beyond — from technology infrastructure to community development.",
     features: [
@@ -132,7 +132,7 @@ export const ventures: Venture[] = [
       "Technology and infrastructure focus",
       "Community impact initiatives"
     ],
-    url: "https://okbventures.com"
+    url: "https://okb-ventures.vercel.app"
   },
 
   // === OKLAHOMA ===

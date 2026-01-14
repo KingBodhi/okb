@@ -91,16 +91,16 @@ export default function Home() {
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
               <div className="text-center">
-                <p className="text-[var(--gold-light)] text-sm tracking-wider uppercase">Road Shows</p>
+                <p className="text-[var(--gold-light)] text-sm tracking-wider uppercase">Strategy & Vision</p>
               </div>
               <div className="text-center">
-                <p className="text-[var(--gold-light)] text-sm tracking-wider uppercase">Social Media Management</p>
+                <p className="text-[var(--gold-light)] text-sm tracking-wider uppercase">Brand Architecture</p>
               </div>
               <div className="text-center">
-                <p className="text-[var(--gold-light)] text-sm tracking-wider uppercase">Web Development</p>
+                <p className="text-[var(--gold-light)] text-sm tracking-wider uppercase">Digital Ecosystems</p>
               </div>
               <div className="text-center">
-                <p className="text-[var(--gold-light)] text-sm tracking-wider uppercase">Event Production</p>
+                <p className="text-[var(--gold-light)] text-sm tracking-wider uppercase">Global Activation</p>
               </div>
             </div>
             <Link

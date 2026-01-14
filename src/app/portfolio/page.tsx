@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Metadata } from "next";
 import {
   ventures,
   agencyVenture,
@@ -8,6 +9,15 @@ import {
   oklahomaVentures,
   pcgPortfolio
 } from "@/data/ventures";
+
+export const metadata: Metadata = {
+  title: "Portfolio",
+  description: "Explore the Family Office portfolio including operating companies, venture investments, real estate holdings, and philanthropic initiatives managed by the Office of the Oklahoma Billionaire.",
+  openGraph: {
+    title: "Portfolio | Oklahoma Billionaire",
+    description: "Operating companies, venture investments, and philanthropic initiatives under management.",
+  },
+};
 
 export default function Portfolio() {
   return (
@@ -132,8 +142,11 @@ export default function Portfolio() {
               <div className="flex-1">
                 <div className="flex items-center gap-4 mb-4">
                   <h2 className="font-cinzel text-white text-2xl tracking-wide">{fundVenture.name}</h2>
-                  <span className="badge-building border-[var(--gold)] text-[var(--gold)]">
-                    Building
+                  <span className={fundVenture.status === "LIVE"
+                    ? "badge-live"
+                    : "badge-building border-[var(--gold)] text-[var(--gold)]"
+                  }>
+                    {fundVenture.status === "LIVE" ? "Operating" : "Building"}
                   </span>
                 </div>
                 <p className="text-sm text-[var(--gold-light)] tracking-wider uppercase mb-4">
@@ -157,9 +170,19 @@ export default function Portfolio() {
               </div>
               {fundVenture.url && (
                 <div className="md:text-right">
-                  <span className="text-sm text-gray-500 italic">
-                    Website Coming Soon
-                  </span>
+                  {fundVenture.status === "LIVE" ? (
+                    <Link
+                      href={fundVenture.url}
+                      target="_blank"
+                      className="btn-outline text-[var(--gold-light)] border-[var(--gold-light)] hover:bg-[var(--gold-light)] hover:text-black"
+                    >
+                      Visit Site
+                    </Link>
+                  ) : (
+                    <span className="text-sm text-gray-500 italic">
+                      Website Coming Soon
+                    </span>
+                  )}
                 </div>
               )}
             </div>

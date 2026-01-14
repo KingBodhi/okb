@@ -1,5 +1,15 @@
 import Link from "next/link";
 import { ventures } from "@/data/ventures";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Vision & Mission",
+  description: "The Office of the Oklahoma Billionaire is a single-family office dedicated to strategic wealth management, venture development, and philanthropic initiatives that facilitate Global Economic Abundance.",
+  openGraph: {
+    title: "Vision & Mission | Oklahoma Billionaire",
+    description: "A single-family office dedicated to strategic wealth management and building ventures that facilitate Global Economic Abundance.",
+  },
+};
 
 export default function Vision() {
   const infrastructureVentures = ventures.filter(v => v.category === "Infrastructure");
