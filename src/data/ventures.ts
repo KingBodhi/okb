@@ -125,7 +125,7 @@ export const ventures: Venture[] = [
     category: "Fund",
     status: "LIVE",
     type: "fund",
-    description: "The investment arm of the Family Office. OKB Ventures deploys capital into early-stage ventures that enhance the quality of life for individuals in Oklahoma and beyond — from technology infrastructure to community development.",
+    description: "The investment arm of the Private Office. OKB Ventures deploys capital into early-stage ventures that enhance the quality of life for individuals in Oklahoma and beyond — from technology infrastructure to community development.",
     features: [
       "Early-stage venture investments",
       "Oklahoma-focused economic development",

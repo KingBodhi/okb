@@ -21,7 +21,7 @@ export default function Footer() {
               Oklahoma Billionaire
             </h3>
             <p className="text-sm text-gray-400 leading-relaxed">
-              A single-family office facilitating Global Economic Abundance through technology, innovation, and the arts.
+              A private office facilitating Global Economic Abundance through technology, innovation, and the arts.
             </p>
           </div>
 

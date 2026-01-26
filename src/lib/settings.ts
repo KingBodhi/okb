@@ -13,7 +13,7 @@ export interface SiteSettings {
 const defaultSettings: SiteSettings = {
   site_name: 'The Office of the Oklahoma Billionaire',
   contact_email: 'theoffice@oklahomabillionaire.com',
-  site_description: 'A single-family office facilitating Global Economic Abundance through technology, innovation, and the arts.',
+  site_description: 'A private office facilitating Global Economic Abundance through technology, innovation, and the arts.',
   linkedin_url: 'https://www.linkedin.com/in/jessyartman/',
   twitter_url: 'https://x.com/oklahomabillion',
   instagram_url: 'https://instagram.com/oklahomabillionaire',

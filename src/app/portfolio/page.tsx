@@ -12,7 +12,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Portfolio",
-  description: "Explore the Family Office portfolio including operating companies, venture investments, real estate holdings, and philanthropic initiatives managed by the Office of the Oklahoma Billionaire.",
+  description: "Explore the Private Office portfolio including operating companies, venture investments, real estate holdings, and philanthropic initiatives managed by the Office of the Oklahoma Billionaire.",
   openGraph: {
     title: "Portfolio | Oklahoma Billionaire",
     description: "Operating companies, venture investments, and philanthropic initiatives under management.",
@@ -31,7 +31,7 @@ export default function Portfolio() {
             Assets Under Management
           </p>
           <h1 className="font-cinzel text-white text-4xl md:text-5xl tracking-[0.1em] uppercase mb-6">
-            Family Office Portfolio
+            Private Office Portfolio
           </h1>
           <div className="w-16 h-0.5 bg-[var(--gold)] mx-auto mb-8" />
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">
@@ -375,7 +375,7 @@ export default function Portfolio() {
           </h2>
           <div className="w-16 h-0.5 bg-[var(--gold)] mx-auto mb-8" />
           <p className="text-gray-400 mb-10">
-            Interested in exploring opportunities with the Family Office? We welcome
+            Interested in exploring opportunities with the Private Office? We welcome
             inquiries from founders, partners, and collaborators aligned with our vision.
           </p>
           <Link

@@ -4,10 +4,10 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Vision & Mission",
-  description: "The Office of the Oklahoma Billionaire is a single-family office dedicated to strategic wealth management, venture development, and philanthropic initiatives that facilitate Global Economic Abundance.",
+  description: "The Office of the Oklahoma Billionaire is a private office dedicated to strategic wealth management, venture development, and philanthropic initiatives that facilitate Global Economic Abundance.",
   openGraph: {
     title: "Vision & Mission | Oklahoma Billionaire",
-    description: "A single-family office dedicated to strategic wealth management and building ventures that facilitate Global Economic Abundance.",
+    description: "A private office dedicated to strategic wealth management and building ventures that facilitate Global Economic Abundance.",
   },
 };
 
@@ -40,13 +40,13 @@ export default function Vision() {
       </section>
 
       {/* ============================================
-          THE FAMILY OFFICE - White/Gold
+          THE PRIVATE OFFICE - White/Gold
           ============================================ */}
       <section className="py-24 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-[var(--gold)] tracking-[0.3em] uppercase text-sm mb-4">
-              The Family Office
+              The Private Office
             </p>
             <h2 className="font-cinzel text-2xl md:text-3xl tracking-[0.15em] uppercase mb-4">
               Office of the Oklahoma Billionaire
@@ -56,7 +56,7 @@ export default function Vision() {
 
           <div className="space-y-6 text-[var(--muted-foreground)] leading-relaxed">
             <p>
-              The Office of the Oklahoma Billionaire is a single-family office dedicated to the
+              The Office of the Oklahoma Billionaire is a private office dedicated to the
               strategic management, preservation, and growth of generational wealth. We oversee
               the administration of family trusts and a diverse portfolio of operating
               companies, venture investments, and philanthropic initiatives.
@@ -77,7 +77,7 @@ export default function Vision() {
       </section>
 
       {/* ============================================
-          FAMILY OFFICE SERVICES - Black/Gold
+          PRIVATE OFFICE SERVICES - Black/Gold
           ============================================ */}
       <section className="py-20 px-6 bg-[var(--dark-bg)]">
         <div className="max-w-6xl mx-auto">
@@ -252,7 +252,7 @@ export default function Vision() {
           <p className="text-gray-400 leading-relaxed mb-8">
             An international agency specializing in branding, marketing, and digital innovation
             for early to mid-stage technology startups. PowerClub Global is the engine that
-            powers the Oklahoma Billionaire Family Office ecosystem.
+            powers the Oklahoma Billionaire Private Office ecosystem.
           </p>
           <Link
             href="https://powerclubglobal.com"
@@ -274,7 +274,7 @@ export default function Vision() {
           </h2>
           <div className="heading-divider" />
           <p className="text-[var(--muted-foreground)] mb-10">
-            View all the operating companies and ventures under management by the Family Office.
+            View all the operating companies and ventures under management by the Private Office.
           </p>
           <Link
             href="/portfolio"

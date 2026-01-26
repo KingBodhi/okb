@@ -19,12 +19,12 @@ const siteUrl = "https://oklahomabillionaire.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "The Office of the Oklahoma Billionaire | Family Office",
+    default: "The Office of the Oklahoma Billionaire | Private Office",
     template: "%s | Oklahoma Billionaire",
   },
-  description: "A single-family office facilitating Global Economic Abundance through technology, innovation, and the arts. Managing a diverse portfolio of operating companies, venture investments, and philanthropic initiatives.",
+  description: "A private office facilitating Global Economic Abundance through technology, innovation, and the arts. Managing a diverse portfolio of operating companies, venture investments, and philanthropic initiatives.",
   keywords: [
-    "family office",
+    "private office",
     "Oklahoma",
     "venture capital",
     "technology",
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteUrl,
     siteName: "The Office of the Oklahoma Billionaire",
-    title: "The Office of the Oklahoma Billionaire | Family Office",
-    description: "A single-family office facilitating Global Economic Abundance through technology, innovation, and the arts.",
+    title: "The Office of the Oklahoma Billionaire | Private Office",
+    description: "A private office facilitating Global Economic Abundance through technology, innovation, and the arts.",
     images: [
       {
         url: "/images/og-image.jpg",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "The Office of the Oklahoma Billionaire",
-    description: "A single-family office facilitating Global Economic Abundance through technology, innovation, and the arts.",
+    description: "A private office facilitating Global Economic Abundance through technology, innovation, and the arts.",
     creator: "@oklahomabillion",
     images: ["/images/og-image.jpg"],
   },
@@ -85,7 +85,7 @@ const organizationJsonLd = {
   alternateName: "Oklahoma Billionaire",
   url: siteUrl,
   logo: `${siteUrl}/images/og-image.jpg`,
-  description: "A single-family office facilitating Global Economic Abundance through technology, innovation, and the arts.",
+  description: "A private office facilitating Global Economic Abundance through technology, innovation, and the arts.",
   founder: {
     "@type": "Person",
     name: "Jessy Artman",

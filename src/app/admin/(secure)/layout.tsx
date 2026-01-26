@@ -173,7 +173,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
               ☰
             </button>
             <div className="font-cinzel text-[var(--gold-light)] text-lg tracking-[0.1em] hidden lg:block">
-              Family Office Control Center
+              Private Office Control Center
             </div>
           </div>
           <div className="flex items-center gap-6">
